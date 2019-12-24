@@ -71,9 +71,9 @@ print("done in %0.3fs" % (time() - t0))
 '''
 print("Fitting the classifier to the training set")
 t0 = time()
-param_grid = {'C': [1e3, 5e3, 1e4, 5e4, 1e5],
-              'gamma': [0.0001, 0.0005, 0.001, 0.005, 0.01, 0.1], }
-# 找到表现最好的一组函数
+param_grid = {'C': [1e3, 5e3, 1e4, 5e4, 1e5],     # 对错误参数进行惩罚的权重
+              'gamma': [0.0001, 0.0005, 0.001, 0.005, 0.01, 0.1], }   # 多少的特征点将会被使用
+# 找到表现最好的一组函数的分类器
 clf = GridSearchCV(SVC(kernel='rbf'), param_grid)
 clf = clf.fit(X_train_pca, y_train)
 print("done in %0.3fs" % (time() - t0))
@@ -109,7 +109,7 @@ def plot_gallery(images, titles, h, w, n_row=3, n_col=4):
 
 
 '''
-将预测结果绘制在测试集的上
+将预测结果绘制在测试集的一部分上
 '''
 def title(y_pred, y_test, target_names, i):
     pred_name = target_names[y_pred[i]].rsplit(' ', 1)[-1]

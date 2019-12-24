@@ -2,6 +2,10 @@
 # -*- coding:utf-8 -*-
 # Author: JYRoooy
 
+'''
+画图
+'''
+
 import numpy as np
 import pylab as pl
 from sklearn import svm

@@ -76,7 +76,7 @@ class NeuralNetwork:
     def predict(self, x):
         '''
         :param x: 预测
-        :return: 
+        :return:  
         '''
         x = np.array(x)
         temp = np.ones(x.shape[0] + 1)

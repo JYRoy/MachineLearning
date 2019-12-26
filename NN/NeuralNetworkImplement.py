@@ -73,6 +73,7 @@ class NeuralNetwork:
                 delta = np.atleast_2d(deltas[i])
                 self.weights[i] += learning_rate * layer.T.dot(delta)
 
+
     def predict(self, x):
         '''
         :param x: 预测

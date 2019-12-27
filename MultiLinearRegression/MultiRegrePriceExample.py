@@ -1,10 +1,9 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
 # Author: JYRoooy
-from _pydecimal import Decimal
 
 import pymysql
-from sklearn import datasets, linear_model
+from sklearn import  linear_model
 import category_encoders as ce
 import numpy as np
 import pandas as pd
@@ -18,8 +17,8 @@ conn = pymysql.connect(
     database='bj_xiaozhu',
     charset='utf8'
 )
-# 游标
-# cursor = conn.cursor()  # 执行完毕返回的结果集默认以元组显示
+
+# 获取数据集
 cursor = conn.cursor(cursor=pymysql.cursors.DictCursor)  # 执行完毕返回的结果集默认以字典显示
 cursor.execute('select district, house_type from rooms')
 data_ana = cursor.fetchall()

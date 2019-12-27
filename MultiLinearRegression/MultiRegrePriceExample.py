@@ -14,7 +14,7 @@ import matplotlib.pyplot as plt
 conn = pymysql.connect(
     host='47.99.185.152',
     user='root',
-    password='A112323a.',
+    password='*********',
     database='bj_xiaozhu',
     charset='utf8'
 )
@@ -92,6 +92,5 @@ plt.plot(range(len(y_pred)),y_pred,'b',label="predict")
 plt.plot(range(len(y_pred)),y_test,'r',label="test")
 plt.show()
 
-
-
-
+# 模型评分
+print(regr.score(X, Y, sample_weight=None))

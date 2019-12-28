@@ -59,7 +59,7 @@ class NeuralNetwork:
             a = [X[i]]
 
             for l in range(len(self.weights)):
-                a.append(self.activation(np.dot(a[l], self.weights[l])))  # 更新下一层的相关节点
+                a.append(self.activation(np.dot(a[l], self.weights[l])))  # 更新下一层的相关节点 
 
             error = Y[i] - a[-1]  # 计算误差
             deltas = [error*self.activation_deriv(a[-1])]  # 输出层的error

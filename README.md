@@ -23,4 +23,4 @@
 ---|---
 简单线性回归 SimpleLinearRegression | 手写源码
 多元线性回归 MultiLinearRegression | 房价预测实例
-
+非线性回归 LogisticRegression | 手写源码
